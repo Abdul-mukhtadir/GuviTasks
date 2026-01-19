@@ -1,0 +1,103 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background: #4f5f70;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #fd56d3;
+  color: #ece8e8;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #3d94db;
+}
+
+/* Game Board */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  max-width: 400px;
+  margin-top:5%;
+  margin-left:34%;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style:preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background: #ebbe71;
+  color: black;
+}
+
+.card-back {
+  background: #374151;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .game-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

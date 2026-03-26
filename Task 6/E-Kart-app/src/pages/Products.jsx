@@ -16,7 +16,7 @@ function Products() {
   };
 
   return (
-    <div className="p-6 grid grid-cols-2 md:grid-cols-3 gap-6 py-16 ">
+    <div className="p-6 grid grid-cols-2 md:grid-cols-3 gap-6 py-20 ">
       {products.map((product) => (
         <div key={product.id} className="border p-4 rounded shadow">
           <img
